@@ -16,7 +16,7 @@ class Feed extends Component {
     };
 
     registerToSocket = () => {
-        const socket = io(`http://localhost:3333`);
+        const socket = io(`https://omnistack-07-backend.herokuapp.com/`);
         socket.on(`post`, newPost => {
             this.setState({ feed: [newPost, ...this.state.feed] })
         });
@@ -57,7 +57,7 @@ class Feed extends Component {
                         </header>
 
                         <img
-                            src={`http://localhost:3333/files/${post.image}`}
+                            src={`https://omnistack-07-backend.herokuapp.com/files/${post.image}`}
                             alt="Uma foto"
                         />
 
@@ -72,7 +72,7 @@ class Feed extends Component {
                             <strong>{post.likes} curtidas</strong>
                             <p>
                                 {post.description}
-                            <span>{post.hashtags}</span>
+                                <span>{post.hashtags}</span>
                             </p>
                         </footer>
                     </article>
